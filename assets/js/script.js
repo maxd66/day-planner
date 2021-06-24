@@ -35,7 +35,6 @@ document.querySelector('.container').addEventListener('click', function(event) {
         var targetLocation = event.target.closest('div').getAttribute('id');
         var targetObjectName = event.target.closest('div').getAttribute('id');
         var targetItem = event.target.closest('div').children[1].value.trim();
-        console.log(targetObjectName);
         var targetLocation = {
             location: targetObjectName,
             text: targetItem
@@ -46,11 +45,8 @@ document.querySelector('.container').addEventListener('click', function(event) {
 
 for(var i = 0; i < timeArr.length; i++) {
     var savedItem = JSON.parse(localStorage.getItem(timeArr[i]))
-    console.log(savedItem);
     if(savedItem !== null) {
-        console.log('it works')
         var targetEl = document.getElementById(savedItem.location);
-        console.log(targetEl);
         targetEl.querySelector('.description').textContent = savedItem.text
     }
 }
