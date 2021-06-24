@@ -25,11 +25,11 @@ var currentTime = moment().format('H')
 function updateTimeSlots() {
     for(var i = 0; i <timeArr.length; i++) {
         if((i + 9) == currentTime) {
-            document.getElementById(timeArr[i]).setAttribute('class', 'mediaRow row time-block present')
+            document.getElementById(timeArr[i]).setAttribute('class', 'row time-block present')
         } else if((i + 9) < currentTime) {
-            document.getElementById(timeArr[i]).setAttribute('class', 'mediaRow row time-block past')
+            document.getElementById(timeArr[i]).setAttribute('class', 'row time-block past')
         } else {
-            document.getElementById(timeArr[i]).setAttribute('class', 'mediaRow row time-block future')
+            document.getElementById(timeArr[i]).setAttribute('class', 'row time-block future')
         }
     }
 };
