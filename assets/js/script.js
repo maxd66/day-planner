@@ -34,7 +34,7 @@ document.querySelector('.container').addEventListener('click', function(event) {
     if (targetBtn.matches('.saveBtn')) {
         var targetLocation = event.target.closest('div').getAttribute('id');
         var targetObjectName = event.target.closest('div').getAttribute('id');
-        var targetItem = event.target.closest('div').children[1].value.trim();
+        var targetItem = event.target.closest('div').children[1].value.trim();   b 
         var targetLocation = {
             location: targetObjectName,
             text: targetItem
