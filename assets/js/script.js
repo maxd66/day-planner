@@ -1,9 +1,4 @@
-// timer will dictate color of text areas throughout the day 
-//      for loop, loop through ids in an array and set if statements
-//      if current time matches id, starting at nine would be i+9
-//      set color to red, if id is less than current hour, gray, else green
-// when save button is clicked (listen on whole page and select sibling of event.target)
-// save sibling to local storage
+var targetObject = {};
 setInterval(function(){
     var currentDate = moment().format('MMMM Do, YYYY   hh:mm:ss');
     document.querySelector('#currentDay').textContent = currentDate;
@@ -33,3 +28,29 @@ function updateTimeSlots() {
         }
     }
 };
+
+document.querySelector('.container').addEventListener('click', function(event) {
+    var targetBtn = event.target;
+    if (targetBtn.matches('.saveBtn')) {
+        var targetLocation = event.target.closest('div').getAttribute('id');
+        var targetObjectName = event.target.closest('div').getAttribute('id');
+        var targetItem = event.target.closest('div').children[1].value.trim();
+        console.log(targetObjectName);
+        var targetLocation = {
+            location: targetObjectName,
+            text: targetItem
+        }
+        localStorage.setItem(targetObjectName, JSON.stringify(targetLocation));
+    }
+})
+
+for(var i = 0; i < timeArr.length; i++) {
+    var savedItem = JSON.parse(localStorage.getItem(timeArr[i]))
+    console.log(savedItem);
+    if(savedItem !== null) {
+        console.log('it works')
+        var targetEl = document.getElementById(savedItem.location);
+        console.log(targetEl);
+        targetEl.querySelector('.description').textContent = savedItem.text
+    }
+}
