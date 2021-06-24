@@ -5,15 +5,15 @@ setInterval(function(){
     updateTimeSlots();
 }, 1000)
 
-var timeArr = ['hour-9', 
-    'hour-10', 
-    'hour-11', 
-    'hour-12', 
-    'hour-13', 
-    'hour-14', 
-    'hour-15', 
-    'hour-16', 
-    'hour-17'];
+var timeArr = ['#hour-9', 
+    '#hour-10', 
+    '#hour-11', 
+    '#hour-12', 
+    '#hour-13', 
+    '#hour-14', 
+    '#hour-15', 
+    '#hour-16', 
+    '#hour-17'];
 
 var currentTime = moment().format('H')
 
@@ -34,7 +34,7 @@ document.querySelector('.container').addEventListener('click', function(event) {
     if (targetBtn.matches('.saveBtn')) {
         var targetLocation = event.target.closest('div').getAttribute('id');
         var targetObjectName = event.target.closest('div').getAttribute('id');
-        var targetItem = event.target.closest('div').children[1].value.trim();   b 
+        var targetItem = event.target.closest('div').children[1].value.trim(); 
         var targetLocation = {
             location: targetObjectName,
             text: targetItem
@@ -43,8 +43,18 @@ document.querySelector('.container').addEventListener('click', function(event) {
     }
 })
 
-for(var i = 0; i < timeArr.length; i++) {
-    var savedItem = JSON.parse(localStorage.getItem(timeArr[i]))
+secondTimeArr = ['hour-9', 
+'hour-10', 
+'hour-11', 
+'hour-12', 
+'hour-13', 
+'hour-14', 
+'hour-15', 
+'hour-16', 
+'hour-17'];
+
+for(var i = 0; i < secondTimeArr.length; i++) {
+    var savedItem = JSON.parse(localStorage.getItem(secondTimeArr[i]))
     if(savedItem !== null) {
         var targetEl = document.getElementById(savedItem.location);
         targetEl.querySelector('.description').textContent = savedItem.text
