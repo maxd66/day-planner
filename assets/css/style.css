@@ -84,4 +84,18 @@ textarea:focus {
     margin-bottom: 20px;
   }
   
+  .saveBtn {
+    border-left: 1px solid black;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #06aed5;
+    color: white;
+    line-height: 0%;
+  }
+
+  .time-block {
+    text-align: center;
+    border-radius: 15px;
+  }
 }
