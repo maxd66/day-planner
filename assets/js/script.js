@@ -60,3 +60,5 @@ for(var i = 0; i < secondTimeArr.length; i++) {
         targetEl.querySelector('.description').textContent = savedItem.text
     }
 }
+
+console.log('Hi lo.')
